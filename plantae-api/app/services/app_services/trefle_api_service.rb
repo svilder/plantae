@@ -9,7 +9,7 @@ class TrefleApiService
     response = HTTParty.get(
       'https://trefle.io/api/v1/plants',
       query: {
-        "token": ,
+        "token": config.trefle_api_key,
         "filter[common_name]": @keyword
       }
     )
