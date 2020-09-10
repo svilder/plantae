@@ -14,7 +14,7 @@ class TrefleApiService
       }
     )
     # puts response.body
-    puts response.to_h.first(5)
+    response.to_h.first(5)
     # puts response.parsed_response
   end
 
