@@ -1,4 +1,4 @@
-class Api::V1::PlantsController < Api::V1::BaseController
+class PagesController < ApplicationController
   def home
   end
 end
