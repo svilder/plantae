@@ -6,9 +6,21 @@ class TrefleApiService
     @keyword = keyword
   end
 
-  def call
-    url = "https://trefle.io/api/v1/plants?token=#{trefle_key}&filter[common_name]=#{@keyword}"
-    return JSON.parse(open(url).read)
+  def search_plants
+    # url = "https://trefle.io/api/v1/plants?token=#{trefle_key}&filter[common_name]=#{@keyword}"
+    url = "https://trefle.io/api/v1/plants/search?token=#{trefle_key}&q=#{@keyword}"
+
+    results = JSON.parse(open(url).read)["data"].first(5)
+    results.map do |result|
+      {
+        common_name: result["common_name"],
+        scientific_name: result["scientific_name"],
+        family: result["family"],
+        family_common_name: result["family_common_name"],
+        synonyms: result["synonyms"].first(3),
+        image_url: result["image_url"]
+      }
+    end
   end
 
   private
