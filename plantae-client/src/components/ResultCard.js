@@ -1,6 +1,6 @@
 import React from 'react';
 
-const GridItem = () => {
+const ResultCard = () => {
   return (
     <div className="column">
       <div className="ui fluid card">
@@ -10,6 +10,7 @@ const GridItem = () => {
         <div className="image">
           <img 
             src="https://bs.floristic.org/image/o/1a03948baf0300da25558c2448f086d39b41ca30"
+            alt="plant"
           />
         </div>
       </div>
@@ -17,4 +18,4 @@ const GridItem = () => {
   );
 };
 
-export default GridItem;
+export default ResultCard;

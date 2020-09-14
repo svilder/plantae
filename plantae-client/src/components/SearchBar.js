@@ -3,10 +3,10 @@ import './SearchBar.css';
 
 const SearchBar = () => {
   return (
-    <div class="ui search margin-bottom">
-      <div class="ui big icon input">
-        <input class="prompt" type="text" placeholder="Common names for plants..." />
-        <i class="search icon"></i>
+    <div className="ui search margin-bottom">
+      <div className="ui big icon input">
+        <input className="prompt" type="text" placeholder="Common names for plants..." />
+        <i className="search icon"></i>
       </div>
     </div>
   );
