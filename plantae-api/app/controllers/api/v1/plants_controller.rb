@@ -1,7 +1,11 @@
 class Api::V1::PlantsController < Api::V1::BaseController
+  require 'open-uri'
   def index
-    # render json: TrefleApiService.new((params[:query])).call
-    query = "oak"
+    if params[:query]
+      query = URI.escape(params[:query])
+    else
+      query = "oak"
+    end
     render json: TrefleApiService.new(query).search_plants
   end
 end

@@ -7,7 +7,6 @@ class TrefleApiService
   end
 
   def search_plants
-    # url = "https://trefle.io/api/v1/plants?token=#{trefle_key}&filter[common_name]=#{@keyword}"
     url = "https://trefle.io/api/v1/plants/search?token=#{trefle_key}&q=#{@keyword}"
 
     results = JSON.parse(open(url).read)["data"].first(5)
