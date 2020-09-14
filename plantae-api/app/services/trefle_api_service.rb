@@ -12,6 +12,7 @@ class TrefleApiService
     results = JSON.parse(open(url).read)["data"].first(5)
     results.map do |result|
       {
+        id: result["id"],
         common_name: result["common_name"],
         scientific_name: result["scientific_name"],
         family: result["family"],
