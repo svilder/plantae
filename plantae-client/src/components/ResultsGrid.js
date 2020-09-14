@@ -1,15 +1,15 @@
 import React from 'react';
 import ResultCard from './ResultCard';
-import './ResultsGrid.css';
+//import './ResultsGrid.css';
 
 const ResultsGrid = (props) => {
   const results = props.results.map( result => {
-    return <ResultCard  />
-  })
-  console.log(props.results);
+    return <ResultCard key={result.id} result={result} />;
+  });
+  
   return (
     <div className="ui five column grid">
-      
+      {results}
     </div>
   );
 };
