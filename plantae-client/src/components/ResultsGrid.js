@@ -1,6 +1,6 @@
 import React from 'react';
 import ResultCard from './ResultCard';
-//import './ResultsGrid.css';
+import './ResultsGrid.css';
 
 const ResultsGrid = (props) => {
   const results = props.results.map( result => {
