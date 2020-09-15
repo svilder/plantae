@@ -3,8 +3,7 @@ import React from 'react';
 class ResultSelected extends React.Component {
   render() {
     const { selectedResult } = this.props;
-    console.log(selectedResult);
-    // const synonyms = this.props.selectedResult.synonyms;
+  
     if(selectedResult === null) {
       return null;
     } else {

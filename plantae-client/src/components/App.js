@@ -8,10 +8,6 @@ import ResultSelected from './ResultSelected';
 class App extends React.Component {
   state = { results: [], selectedResult: null };
 
-  // Sur la liste de results, écouter le click pour sélectionner un result
-  // selectionner le result dans la liste et envoyer ses infos en props au ResultSelected
-  // <ResultSelected key={result.id} result={result} />
-
   onSearchSubmit = async (term) => {
     const response = await plantae.get('/api/v1/plants', {
       params: { query: term }

@@ -2,3 +2,13 @@
   justify-content: center;
 }
 
+.ui.fluid.card {
+  cursor: help;
+}
+
+
+.ui.card>.image>img, .ui.cards>.card>.image>img,
+.ui.items>.item>.image>img {
+  height: 200px;
+  object-fit: cover;
+}
