@@ -4,7 +4,7 @@ class ResultCard extends React.Component {
   render() {
     const { result } = this.props;
     return (
-      <div className="column">
+      <div onClick={() => this.props.updateSelectedResult(result)} className="column">
         <div className="ui fluid card">
           <div className="content">
             <p className="header">{result.common_name}</p>

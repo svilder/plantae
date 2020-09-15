@@ -16,7 +16,7 @@ class SearchBar extends React.Component {
           <input 
             className="prompt" 
             type="text" 
-            placeholder="Common names for plants..." 
+            placeholder="Nom de plante en anglais" 
             value={this.state.term}
             onChange={(e) => this.setState({ term: e.target.value })}
           />

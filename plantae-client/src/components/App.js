@@ -6,7 +6,7 @@ import ResultsGrid from './ResultsGrid';
 import ResultSelected from './ResultSelected';
 
 class App extends React.Component {
-  state = { results: [] };
+  state = { results: [], selectedResult: null };
 
   // Sur la liste de results, écouter le click pour sélectionner un result
   // selectionner le result dans la liste et envoyer ses infos en props au ResultSelected
@@ -16,12 +16,11 @@ class App extends React.Component {
     const response = await plantae.get('/api/v1/plants', {
       params: { query: term }
     });
-    console.log(response.data);
-    this.setState({results: response.data});
+    this.setState({results: response.data, selectedResult: response.data[0]});
   };
 
-  componentWillMount() {
-    console.log("toto");
+  updateSelectedResult = (result) => {
+    this.setState({selectedResult: result});
   }
 
   render() {
@@ -29,8 +28,8 @@ class App extends React.Component {
       <div className="ui container" style={{marginTop: '32px'}}>
         <Header />
         <SearchBar onSubmit={this.onSearchSubmit} />
-        <ResultsGrid results={this.state.results} />
-        <ResultSelected result={this.componentWillMount} />
+        <ResultSelected selectedResult={this.state.selectedResult} />
+        <ResultsGrid results={this.state.results} updateSelectedResult={this.updateSelectedResult} />
       </div>
     );
   };
