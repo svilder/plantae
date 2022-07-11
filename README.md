@@ -7,3 +7,4 @@ API [Trefle](https://trefle.io/) used.
 
 ## Single page built with React
 [You can search any plant to get details](http://svilder.github.io/plantae/)
+
